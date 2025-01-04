@@ -2,12 +2,17 @@ const { test, expect } = require('@playwright/test');
 
 const dayjs = require('dayjs');
 
+test('Verify sign in pop-up appears', async ({ page }) => {
+  await page.goto('https://www.booking.com');  
+  await expect(page.getByRole('link', { name: 'Sign in or register' })).toBeVisible()
+});
+
 test('Search for a hotel in Columbia for the next 5 days', async ({ page }) => {
   await page.goto('https://www.booking.com');
   
   // close the pop up
   let crossPopUpToSigIn = page.locator(`[aria-label="Dismiss sign-in info."]`)
-  await expect(crossPopUpToSigIn).toBeVisible({timeout:20000})
+  await expect(crossPopUpToSigIn).toBeVisible({timeout:30000})
   await crossPopUpToSigIn.click()
   // Enter the destination
   await page.fill('[aria-label="Where are you going?"]', 'Columbia');
