@@ -7,6 +7,14 @@ test('Verify sign in pop-up appears', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Sign in or register' })).toBeVisible()
 });
 
+test('Verify search input fields at home page', async ({ page }) => {
+  await page.goto('https://www.booking.com/');
+  await page.getByLabel('Dismiss sign-in info.').click();
+  await expect(page.getByPlaceholder('Where are you going?')).toBeVisible();
+  await expect(page.getByTestId('searchbox-dates-container')).toBeVisible();
+  await expect(page.getByTestId('occupancy-config')).toBeVisible();
+});
+
 test('Search for a hotel in Columbia for the next 5 days', async ({ page }) => {
   await page.goto('https://www.booking.com');
   
