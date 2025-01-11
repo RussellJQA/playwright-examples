@@ -12,7 +12,15 @@ test('Verify search input fields at home page', async ({ page }) => {
   await page.getByLabel('Dismiss sign-in info.').click();
   await expect(page.getByPlaceholder('Where are you going?')).toBeVisible();
   await expect(page.getByTestId('searchbox-dates-container')).toBeVisible();
-  await expect(page.getByTestId('occupancy-config')).toBeVisible();
+  await page.getByRole('button', { name: 'Search' }).click();
+  await page.getByPlaceholder('Where are you going?').click();
+  await page.getByPlaceholder('Where are you going?').fill('New York');
+  await page.getByRole('button', { name: 'New York New York, United' }).click();
+  await page.getByTestId('date-display-field-start').click();
+  await page.getByTestId('date-display-field-end').click();
+  await page.getByLabel('20 January').click();
+  await page.getByTestId('occupancy-config').click();
+  await page.getByRole('button', { name: 'Done' }).click();
 });
 
 test('Search for a hotel in Columbia for the next 5 days', async ({ page }) => {
