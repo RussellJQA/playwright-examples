@@ -1,0 +1,23 @@
+{
+  "name": "playwright-examples",
+  "version": "1.0.0",
+  "description": "🎥🌈 Here, you'll discover code from our educational YouTube videos that swiftly guide you through Playwright. It's a fantastic opportunity for beginners in programming and test automation to see Playwright in action! Perfect for those just starting their coding journey or looking to dip their toes into the world of automated testing. 🌟👩‍💻",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engenious-inc/playwright-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/engenious-inc/playwright-examples/issues"
+  },
+  "homepage": "https://github.com/engenious-inc/playwright-examples#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.10.10"
+  }
+}
